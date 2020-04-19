@@ -22,5 +22,8 @@
   "homepage": "https://github.com/astak16/vue-wheel#readme",
   "dependencies": {
     "vue": "^2.6.11"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
   }
 }
