@@ -55,7 +55,9 @@
   <div class="box">
     <g-input value="张三" disabled></g-input>
     <g-input value="只读" readonly></g-input>
-    <g-input value="只" @change="inputChange"></g-input>
+    <g-input v-model="message"></g-input>
+    <p>{{message}}</p>
+    <button @click="message +=1">+1</button>
     <!--<g-input value="张三" disabled></g-input>-->
     <!--<g-input value="张三" disabled></g-input>-->
   </div>
