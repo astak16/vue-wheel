@@ -1,13 +1,12 @@
 <template>
-  <div class="col" :class="[span && `col-${span}`,offset && `offset-${offset}`]"
-       :style="{paddingLeft:gutter/2+'px',paddingRight:gutter/2+'px'}">
+  <div class="col" :class="colClass" :style="colStyle">
     <slot></slot>
   </div>
 </template>
 
 <script>
   export default {
-    name: "col",
+    name: "col1",
     props: {
       span: {
         type: [Number, String]
@@ -19,6 +18,21 @@
     data() {
       return {
         gutter: 0
+      }
+    },
+    computed: {
+      colClass() {
+        const {span, offset} = this
+        return [
+          span && `col-${span}`,
+          offset && `offset-${offset}`
+        ]
+      },
+      colStyle() {
+        return {
+          paddingLeft: this.gutter / 2 + 'px',
+          paddingRight: this.gutter / 2 + 'px'
+        }
       }
     }
   }
