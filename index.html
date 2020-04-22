@@ -33,14 +33,59 @@
     }
   </style>
   <style>
-.box{
-  margin-bottom: 20px;
-}
+    .box {
+      margin-bottom: 20px;
+    }
+  </style>
+  <style>
+    /*.col {*/
+      /*height: 100px;*/
+      /*background: grey;*/
+      /*width: 50%;*/
+      /*border: 1px solid red;*/
+    /*}*/
   </style>
 </head>
 <body>
 <div id="test"></div>
 <div id="app">
+  <g-row gutter="20">
+    <g-col>1</g-col>
+    <g-col>2</g-col>
+  </g-row>
+  <g-row gutter="20">
+    <g-col>1</g-col>
+    <g-col>2</g-col>
+    <g-col>3</g-col>
+  </g-row>
+  <g-row gutter="20">
+    <g-col>1</g-col>
+    <g-col>2</g-col>
+    <g-col>3</g-col>
+    <g-col>4</g-col>
+  </g-row>
+  <g-row gutter="20">
+    <g-col span="2">1</g-col>
+    <g-col span="22">11</g-col>
+  </g-row>
+  <g-row gutter="20">
+    <g-col span="4">1</g-col>
+    <g-col span="20">1</g-col>
+  </g-row>
+  <g-row gutter="20">
+    <g-col span="2">1</g-col>
+    <g-col span="20" offset="2">1</g-col>
+  </g-row>
+  <g-row gutter="20">
+    <g-col span="4">1</g-col>
+    <g-col span="18" offset="2">1</g-col>
+  </g-row>
+  <g-row gutter="20">
+    <g-col span="4">1</g-col>
+    <g-col span="8" offset="2">1</g-col>
+    <g-col span="8" offset="2">1</g-col>
+  </g-row>
+  <hr>
   <div class="box">
     <g-button :loading="loading1" @click="loading1 = !loading1">按钮</g-button>
     <g-button icon="settings" :loading="loading2" @click="loading2 = !loading2">按钮</g-button>
