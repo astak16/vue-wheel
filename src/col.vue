@@ -42,7 +42,7 @@
           ...this.createClass(ipad, 'ipad-'),
           ...this.createClass(narrowPc, 'narrow-pc-'),
           ...this.createClass(pc, "pc-"),
-          ...this.createClass(widePc, "wide-px")
+          ...this.createClass(widePc, "wide-pc-")
         ]
       },
       colStyle() {
