@@ -10,8 +10,8 @@ import Content from "./content"
 import Footer from "./footer"
 import Sider from "./sider"
 import Layout from "./layout"
-import Toast from "./toast"
 import plugin from "./plugin";
+import Toast from "./toast"
 
 Vue.component("g-button", Button)
 Vue.component("g-icon", Icon)
@@ -35,7 +35,7 @@ new Vue({
     message: "hi"
   },
   created(){
-    this.showToast()
+    // this.showToast()
   },
   methods: {
     inputChange(e) {
@@ -44,7 +44,7 @@ new Vue({
     showToast() {
       this.$toast("你的智商需要充值", {
         position: "bottom",
-        enableHtml: false,
+        // enableHtml: false,
         closeButton: {
           text: "已充值",
           callback() {
