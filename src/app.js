@@ -37,6 +37,9 @@ new Vue({
   methods: {
     inputChange(e) {
       console.log(e)
+    },
+    showToast() {
+      this.$toast("我是 message")
     }
   }
 })
