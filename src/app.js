@@ -34,12 +34,26 @@ new Vue({
     loading3: false,
     message: "hi"
   },
+  created(){
+    this.showToast()
+  },
   methods: {
     inputChange(e) {
       console.log(e)
     },
     showToast() {
-      this.$toast("我是 message")
+      this.$toast("你的智商需要充值", {
+        position: "bottom",
+        enableHtml: false,
+        closeButton: {
+          text: "已充值",
+          callback() {
+            console.log("他说已经充值了")
+          }
+        },
+        autoClose: true,
+        autoCloseDelay: 3
+      })
     }
   }
 })
