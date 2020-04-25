@@ -38,65 +38,67 @@
     }
   </style>
   <style>
-   .demo{
-     background:#ddd;
-     border: 1px solid #666;
-     height: 100px;
-   }
+    .demo {
+      background: #ddd;
+      border: 1px solid #666;
+      height: 100px;
+    }
   </style>
 </head>
 <body>
 <div id="test"></div>
 <div id="app">
-  <button @click="showToast">点我</button>
+  <button @click="showToast1">点我</button>
+  <button @click="showToast2">点我</button>
+  <button @click="showToast3">点我</button>
   <br>
-  <g-layout style="height: 100vh">
-    <g-sider class="demo">sider</g-sider>
-    <g-layout>
-      <g-header class="demo">header</g-header>
-      <g-content class="demo">content</g-content>
-      <g-footer class="demo">footer</g-footer>
-    </g-layout>
-  </g-layout>
-  <br>
-  <g-row>
-    <g-col span="24" :ipad="{span:12}" :narrow-pc="{span:8}">
-      <div class="demo"></div>
-    </g-col>
-    <g-col span="24":narrow-pc="{span:8}">
-      <div class="demo"></div>
-    </g-col>
-    <g-col span="24" :ipad="{span:12}" :narrow-pc="{span:8}">
-      <div class="demo"></div>
-    </g-col>
-    <g-col span="24" :ipad="{span:12}" :narrow-pc="{span:8}">
-      <div class="demo"></div>
-    </g-col>
-    <g-col span="24" :ipad="{span:12}" :narrow-pc="{span:8}">
-      <div class="demo"></div>
-    </g-col>
-  </g-row>
-  <hr>
-  <div class="box">
-    <g-button :loading="loading1" @click="loading1 = !loading1">按钮</g-button>
-    <g-button icon="settings" :loading="loading2" @click="loading2 = !loading2">按钮</g-button>
-    <g-button icon="settings" icon-position="right" :loading="loading3" @click="loading3 = !loading3">按钮</g-button>
-    <g-icon name="down"></g-icon>
-    <g-button-group>
-      <g-button icon="left">上一页</g-button>
-      <g-button>更多</g-button>
-      <g-button icon="right" icon-position="right">下一页</g-button>
-    </g-button-group>
-  </div>
-  <div class="box">
-    <g-input value="张三" disabled></g-input>
-    <g-input value="只读" readonly></g-input>
-    <g-input v-model="message"></g-input>
-    <p>{{message}}</p>
-    <button @click="message +=1">+1</button>
-    <!--<g-input value="张三" disabled></g-input>-->
-    <!--<g-input value="张三" disabled></g-input>-->
-  </div>
+  <!--<g-layout style="height: 100vh">-->
+  <!--<g-sider class="demo">sider</g-sider>-->
+  <!--<g-layout>-->
+  <!--<g-header class="demo">header</g-header>-->
+  <!--<g-content class="demo">content</g-content>-->
+  <!--<g-footer class="demo">footer</g-footer>-->
+  <!--</g-layout>-->
+  <!--</g-layout>-->
+  <!--<br>-->
+  <!--<g-row>-->
+  <!--<g-col span="24" :ipad="{span:12}" :narrow-pc="{span:8}">-->
+  <!--<div class="demo"></div>-->
+  <!--</g-col>-->
+  <!--<g-col span="24":narrow-pc="{span:8}">-->
+  <!--<div class="demo"></div>-->
+  <!--</g-col>-->
+  <!--<g-col span="24" :ipad="{span:12}" :narrow-pc="{span:8}">-->
+  <!--<div class="demo"></div>-->
+  <!--</g-col>-->
+  <!--<g-col span="24" :ipad="{span:12}" :narrow-pc="{span:8}">-->
+  <!--<div class="demo"></div>-->
+  <!--</g-col>-->
+  <!--<g-col span="24" :ipad="{span:12}" :narrow-pc="{span:8}">-->
+  <!--<div class="demo"></div>-->
+  <!--</g-col>-->
+  <!--</g-row>-->
+  <!--<hr>-->
+  <!--<div class="box">-->
+  <!--<g-button :loading="loading1" @click="loading1 = !loading1">按钮</g-button>-->
+  <!--<g-button icon="settings" :loading="loading2" @click="loading2 = !loading2">按钮</g-button>-->
+  <!--<g-button icon="settings" icon-position="right" :loading="loading3" @click="loading3 = !loading3">按钮</g-button>-->
+  <!--<g-icon name="down"></g-icon>-->
+  <!--<g-button-group>-->
+  <!--<g-button icon="left">上一页</g-button>-->
+  <!--<g-button>更多</g-button>-->
+  <!--<g-button icon="right" icon-position="right">下一页</g-button>-->
+  <!--</g-button-group>-->
+  <!--</div>-->
+  <!--<div class="box">-->
+  <!--<g-input value="张三" disabled></g-input>-->
+  <!--<g-input value="只读" readonly></g-input>-->
+  <!--<g-input v-model="message"></g-input>-->
+  <!--<p>{{message}}</p>-->
+  <!--<button @click="message +=1">+1</button>-->
+  <!--&lt;!&ndash;<g-input value="张三" disabled></g-input>&ndash;&gt;-->
+  <!--&lt;!&ndash;<g-input value="张三" disabled></g-input>&ndash;&gt;-->
+  <!--</div>-->
 </div>
 <script src="./node_modules/vue/dist/vue.min.js"></script>
 <script src="//at.alicdn.com/t/font_1765093_yogo6m02lnq.js"></script>
