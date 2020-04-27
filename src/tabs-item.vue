@@ -26,7 +26,8 @@
     computed: {
       classes() {
         return {
-          active: this.active
+          active: this.active,
+          disabled: this.disabled
         }
       }
     },
@@ -37,25 +38,32 @@
     },
     methods: {
       xx() {
-        this.eventBus.$emit("update:selected", this.name,this)
+        if (this.disabled) return
+        this.eventBus.$emit("update:selected", this.name, this)
       }
     }
   }
 </script>
 
 <style scoped lang="scss">
-  $blue:blue;
+  $blue: blue;
+  $disable-text-color: grey;
   .tabs-item {
     flex-shrink: 0;
     padding: 0 1em;
     height: 100%;
     display: flex;
     align-items: center;
+    cursor: pointer;
 
     &.active {
-      /*background: red;*/
-      color:$blue;
+      color: $blue;
       font-weight: bold;
+    }
+
+    &.disabled {
+      color: $disable-text-color;
+      cursor: not-allowed;
     }
   }
 </style>
