@@ -1,5 +1,5 @@
 <template>
-  <div class="tabs-item" :class="classes" @click="xx" v-if="active">
+  <div class="tabs-item" :class="classes" @click="xx">
     <slot></slot>
   </div>
 </template>
@@ -47,6 +47,9 @@
   .tabs-item {
     flex-shrink: 0;
     padding: 0 1em;
+    height: 100%;
+    display: flex;
+    align-items: center;
 
     &.active {
       background: red;
