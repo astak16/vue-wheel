@@ -1,5 +1,6 @@
 <template>
-  <div class="tabs-item" :class="classes" @click="xx">
+  <div class="tabs-item" :class="classes" @click="xx"
+       :data-name="name">
     <slot></slot>
   </div>
 </template>
@@ -32,14 +33,18 @@
       }
     },
     created() {
-      this.eventBus.$on("update:selected", (name) => {
-        this.active = name === this.name
-      })
+      if (this.eventBus) {
+        this.eventBus.$on("update:selected", (name) => {
+          this.active = name === this.name
+        })
+      }
     },
     methods: {
       xx() {
         if (this.disabled) return
+        this.eventBus &&
         this.eventBus.$emit("update:selected", this.name, this)
+        this.$emit("click", this)
       }
     }
   }
