@@ -53,7 +53,7 @@
     align-items: center;
 
     &.active {
-      background: red;
+      /*background: red;*/
       color:$blue;
       font-weight: bold;
     }
