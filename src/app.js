@@ -52,6 +52,9 @@ new Vue({
     // this.showToast()
   },
   methods: {
+    x(){
+
+    },
     inputChange(e) {
       console.log(e)
     },
