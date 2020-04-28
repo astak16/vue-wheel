@@ -49,6 +49,21 @@
 <div id="test"></div>
 <div id="app">
   <!--<g-tabs selected="selected" @update:selected="selected = $event">-->
+  <div v-if="x" class="xxx"></div>
+  <button @click="x = true">点我</button>
+  <g-popover>
+    <template slot="content">
+      <div>popover 内容</div>
+    </template>
+    <button>点我</button>
+  </g-popover>
+  <g-popover>
+    <template slot="content">
+      <div>popover 内容</div>
+    </template>
+    <button>点我</button>
+  </g-popover>
+  <br>
   <g-tabs :selected.sync="selected">
     <g-tabs-head>
       <template slot="actions">
