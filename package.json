@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/astak16/vue-wheel#readme",
   "dependencies": {
-    "vue": "^2.6.11",
+    "vue": "^2.5.16",
     "vue-hot-reload-api": "^2.3.4"
   },
   "devDependencies": {

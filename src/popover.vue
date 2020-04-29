@@ -1,10 +1,10 @@
 <template>
-  <div class="popover" @click.stop="xxx">
-    <div class="content-wrap" v-show="visible" ref="contentWrapper">
+  <div class="popover" @click="onClick" ref="popover">
+    <div class="content-wrap" v-if="visible" ref="contentWrapper">
       <slot name="content"></slot>
     </div>
     <span ref="triggerWrapper">
-    <slot></slot>
+      <slot></slot>
     </span>
   </div>
 </template>
@@ -21,23 +21,41 @@
 
     },
     methods: {
-      xxx() {
-        this.visible = !this.visible
-        if (this.visible) {
-          this.$nextTick(() => {
-            document.body.appendChild(this.$refs.contentWrapper)
-            const {width, height, top, left} = this.$refs.triggerWrapper.getBoundingClientRect()
-            this.$refs.contentWrapper.style.left = left + window.scrollX + 'px'
-            this.$refs.contentWrapper.style.top = top + window.scrollY + 'px'
-
-            const eventHandler = () => {
-              this.visible = false
-              document.removeEventListener("click", eventHandler)
-            }
-            document.addEventListener("click", eventHandler)
-          })
-        } else {
-
+      positionContent() {
+        document.body.appendChild(this.$refs.contentWrapper)
+        const {width, height, top, left} = this.$refs.triggerWrapper.getBoundingClientRect()
+        this.$refs.contentWrapper.style.left = left + window.scrollX + 'px'
+        this.$refs.contentWrapper.style.top = top + window.scrollY + 'px'
+      },
+      onClickDocument(e) {
+        console.log(this.$refs.popover)
+        console.log(this.$refs.popover === e.target)
+        console.log(this.$refs.popover.contains(e.target))
+        console.log(e.target)
+        if (this.$refs.popover &&
+          (this.$refs.contentWrapper === e.target ||
+            this.$refs.contentWrapper.contains(e.target))) return
+        this.close()
+      },
+      open() {
+        this.visible = true
+        setTimeout(() => {
+          this.positionContent()
+          console.log(1)
+          document.addEventListener("click", this.onClickDocument)
+        }, 0)
+      },
+      close() {
+        this.visible = false
+        document.removeEventListener("click", this.onClickDocument)
+      },
+      onClick(event) {
+        if (this.$refs.triggerWrapper.contains(event.target)) {
+          if (this.visible) {
+            this.close()
+          } else {
+            this.open()
+          }
         }
       }
     }
@@ -45,12 +63,11 @@
 </script>
 
 <style scoped lang="scss">
+
   .popover {
     display: inline-block;
     vertical-align: top;
     position: relative;
-
-
   }
 
   .content-wrap {
