@@ -53,13 +53,25 @@
   <!--<g-tabs selected="selected" @update:selected="selected = $event">-->
 <!--  <div v-if="x" class="xxx"></div>-->
 <!--  <button @click="x = true">点我</button>-->
-  <g-popover>
+  <g-popover position="bottom">
     <template slot="content">
       <div>popover 内容</div>
     </template>
     <g-button>点我</g-button>
   </g-popover>
-  <g-popover>
+  <g-popover position="top">
+    <template slot="content">
+      <div>popover 内容</div>
+    </template>
+    <g-button>点我</g-button>
+  </g-popover>
+  <g-popover position="left">
+    <template slot="content">
+      <div>popover 内容</div>
+    </template>
+    <g-button>点我</g-button>
+  </g-popover>
+  <g-popover position="right">
     <template slot="content">
       <div>popover 内容</div>
     </template>
